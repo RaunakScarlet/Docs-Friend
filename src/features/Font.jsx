@@ -92,7 +92,44 @@ const Font = () => {
                     custom font
                     
                 </button>
-               
+                <select
+                    className="w-24 h-12 m-3"
+                    onChange={(e) => {
+                        setCurrentText(e.currentTarget.value);
+                        handleFont();
+                    }}
+                >
+                    <option value="">None</option>
+                    <option value="Arial, sans-serif">Arial</option>
+                    <option value="Helvetica, sans-serif">Helvetica</option>
+                    <option value="Verdana, sans-serif">Verdana</option>
+                    <option value="Trebuchet MS, sans-serif">
+                        Trebuchet MS
+                    </option>
+                    <option value="Gill Sans, sans-serif">Gill Sans</option>
+                    <option value="Noto Sans, sans-serif">Noto</option>
+                    <option value="Optima, sans-serif">Optima</option>
+                    <option value="Arial Narrow, sans-serif">Arial</option>
+                    <option value="Times New Roman, serif">Times</option>
+                    <option value="Didot, serif">Didot</option>
+                    <option value="Georgia, serif">Georgia</option>
+                    <option value="URW Palladio L, serif">Palladio</option>
+                    <option value="American Typewriter, serif">American</option>
+                    <option value="Andale Mono, monospace">Andale</option>
+                    <option value="Courier New, monospace">Courier</option>
+                    <option value="FreeMono, monospace">FreeMono</option>
+                    <option value="DejaVu Sans Mono, monospace">DejaVu</option>
+                    <option value="Comic Sans, cursive">Comic</option>
+                    <option value="Apple Chancery, cursive">Apple</option>
+                    <option value="Bradley Hand, cursive">Bradley</option>
+                    <option value="Brush Script Std, cursive">Brush</option>
+                    <option value="Impact, fantasy">Impact</option>
+                    <option value="Luminari, fantasy">Luminari</option>
+                    <option value="Chalkduster, fantasy">Chalkduster</option>
+                    <option value="Blippo, fantasy">Blippo</option>
+                    <option value="Marker Felt, fantasy">Marker</option>
+                    <option value="Trattatello, fantasy">Trattatello</option>
+                </select>
             </div>
         </div>
     );
