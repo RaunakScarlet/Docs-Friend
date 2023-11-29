@@ -25,9 +25,10 @@ const Font = () => {
     }, [currentText]);
     return (
         <div className="h-60">
+            <span className="text-white text-xl font-bold  border-b-2 ">Font Style</span>
             <div className="w-96 ">
                 <button
-                    className="w-24 h-12 m-3 bg-black   border border-white"
+                    className="w-24 h-12 m-3 pt-2 bg-black   border border-white"
                     value="Arial, sans-serif"
                     onClick={(e) => {
                         setCurrentText(e.target.value);
@@ -88,9 +89,8 @@ const Font = () => {
                 </button>
             </div>
             <div className="flex p-3">
-                <button className="flex text-xs w-24 h-12 m-3 cursor-default ">
+                <button className="w-28 h-12 m-3 bg-black   border border-white">
                     custom font
-                    
                 </button>
                 <select
                     className="w-24 h-12 m-3"
