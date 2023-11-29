@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
+import { FaArrowRight } from "react-icons/fa";
 
 import "../App.css";
 
 const Color = () => {
     const [currentColor, setCurrentColor] = useState("");
+    const colour = document.body.style.color;
 
     const handleFont = async () => {
         let [tab] = await chrome.tabs.query({ active: true });
@@ -51,14 +53,12 @@ const Color = () => {
                         setCurrentColor(e.target.value);
                         handleFont();
                     }}
-                >
-                    
-                </button>
-                
+                ></button>
             </div>
-            <div className="flex p-3">
-                <button className="w-28 h-12 m-3 bg-black   border border-white">
-                    custom color
+            <div className="flex border border-white p-3">
+                <button className="flex items-center  w-24 h-12 m-3 bg-black   border border-white cursor-default">
+                    <span className="mr-2">custom</span>
+                    <FaArrowRight />
                 </button>
                 <input
                     type="color"
@@ -67,9 +67,13 @@ const Color = () => {
                         setCurrentColor(e.currentTarget.value);
                         handleFont();
                     }}
+                ></input>
+                <button
+                    className="w-24 h-12 m-3 -p-2 bg-black   border border-white"
+                    onClick={() => setCurrentColor(colour)}
                 >
-                    
-                </input>
+                    reset
+                </button>
             </div>
         </div>
     );

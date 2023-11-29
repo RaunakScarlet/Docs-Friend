@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
+import { FaArrowRight } from "react-icons/fa";
 
 import "../App.css";
 
 const Size = () => {
     const [currentSize, setCurrentSize] = useState("");
+    const size = document.body.style.fontSize;
 
     const handleFont = async () => {
         let [tab] = await chrome.tabs.query({ active: true });
@@ -89,10 +91,12 @@ const Size = () => {
                     32px
                 </button>
             </div>
-            <div className="flex p-3">
-                <button className="w-28 h-12 m-3 bg-black   border border-white">
-                    custom size
+            <div className="flex border border-white p-3">
+                <button className="flex items-center  w-24 h-12 m-3 bg-black   border border-white cursor-default">
+                    <span className="mr-2">custom</span>
+                    <FaArrowRight />
                 </button>
+
                 <select
                     className="w-24 h-12 m-3"
                     onChange={(e) => {
@@ -100,7 +104,7 @@ const Size = () => {
                         handleFont();
                     }}
                 >
-                    <option value="">None</option>
+                    <option value="">{currentSize}</option>
                     <option value="1px">1px</option>
                     <option value="2px">2px</option>
                     <option value="4px">4px</option>
@@ -129,6 +133,12 @@ const Size = () => {
                     <option value="48px">48px</option>
                     <option value="50px">50px</option>
                 </select>
+                <button
+                    className="w-24 h-12 m-3 -p-2 bg-black   border border-white"
+                    onClick={() => setCurrentSize(size)}
+                >
+                    reset
+                </button>
             </div>
         </div>
     );

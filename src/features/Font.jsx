@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
-
+import { FaArrowRight } from "react-icons/fa";
 
 
 import '../App.css'
 
 const Font = () => {
     const [currentText, setCurrentText] = useState("");
+    const text = document.body.style.fontFamily;
+
     const handleFont = async () => {
         let [tab] = await chrome.tabs.query({ active: true });
         chrome.scripting.executeScript({
@@ -25,7 +27,9 @@ const Font = () => {
     }, [currentText]);
     return (
         <div className="h-60">
-            <span className="text-white text-xl font-bold  border-b-2 ">Font Style</span>
+            <span className="text-white text-xl font-bold  border-b-2 ">
+                Font Style
+            </span>
             <div className="w-96 ">
                 <button
                     className="w-24 h-12 m-3 pt-2 bg-black   border border-white"
@@ -88,9 +92,10 @@ const Font = () => {
                     Jazz
                 </button>
             </div>
-            <div className="flex p-3">
-                <button className="w-28 h-12 m-3 bg-black   border border-white">
-                    custom font
+            <div className="flex border border-white p-3 ">
+                <button className="flex items-center  w-24 h-12 m-3 bg-black   border border-white cursor-default">
+                    <span className="mr-2">custom</span>
+                    <FaArrowRight />
                 </button>
                 <select
                     className="w-24 h-12 m-3"
@@ -99,7 +104,7 @@ const Font = () => {
                         handleFont();
                     }}
                 >
-                    <option value="">None</option>
+                    <option value="">{currentText}</option>
                     <option value="Arial, sans-serif">Arial</option>
                     <option value="Helvetica, sans-serif">Helvetica</option>
                     <option value="Verdana, sans-serif">Verdana</option>
@@ -130,6 +135,12 @@ const Font = () => {
                     <option value="Marker Felt, fantasy">Marker</option>
                     <option value="Trattatello, fantasy">Trattatello</option>
                 </select>
+                <button
+                    className="w-24 h-12 m-3 -p-2 bg-black   border border-white"
+                    onClick={() => setCurrentText(text)}
+                >
+                    reset
+                </button>
             </div>
         </div>
     );

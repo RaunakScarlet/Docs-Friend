@@ -9,7 +9,7 @@ function App() {
 
   return (
      <>
-        <div className='text-white text-xl font-bold  border-b-2'>Docs Friend</div>
+        <div className='text-white text-xl font-bold  border-b-2'>Font Friend</div>
           <div className="card flex-row w-full h-full justify-between m">
               <Font />
               <Size />
