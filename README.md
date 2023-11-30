@@ -31,8 +31,10 @@ A open source customisable font formatter chrome extension tool which is mainly 
 
 
 ## Getting Started
- #### NPM
-  ###### installation
+  ### Demo (youtube)
+  [Youtube Link](https://youtu.be/NCocpjFJECk)
+  
+  #### installation
   <p>The font friend chrome extension is yet to be released to the chrome store as it will be under review. It take few days to be available on chrome store.</p>
   <p>Mean while you can download the file from given link and experience its awsome utility features</p>
 
@@ -47,6 +49,7 @@ A open source customisable font formatter chrome extension tool which is mainly 
    <p>5. click on load unpacked at top left corner</p>
    <p>6. upload the downloaded file</p>
    experience awsome reading time
+   
   
  
 ## Permissions
