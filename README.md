@@ -75,6 +75,25 @@ The Font Color component is part of the Font Friend Chrome extension, allowing u
 
 </p>
 
+
+### font color code
+
+```
+ let [tab] = await chrome.tabs.query({ active: true });
+        chrome.scripting.executeScript({
+            target: { tabId: tab.id },
+            args: [currentColor],
+            func: (currentColor) => {
+                let allElements = document.querySelectorAll("*");
+                allElements.forEach(function (element) {
+                    element.style.color = currentColor;
+                });
+            },
+        });
+```
+
+
+
 ## Usage
 
 1. **Color Selection Buttons**:
@@ -86,6 +105,8 @@ The Font Color component is part of the Font Friend Chrome extension, allowing u
 
 3. **Reset to Default**:
     - Use the "reset" button to revert the font color to the default color on the current webpage.
+  
+      
 
 # Font Style Component
 
@@ -96,7 +117,21 @@ The Font Style component is a part of the Font Friend Chrome extension, designed
 
 
 </p>
+### font style code
 
+```
+  let [tab] = await chrome.tabs.query({ active: true });
+        chrome.scripting.executeScript({
+            target: { tabId: tab.id },
+            args: [currentText],
+            func: (currentText) => {
+                let allElements = document.querySelectorAll("*");
+                allElements.forEach(function (element) {
+                    element.style.fontFamily = currentText;
+                });
+            },
+        });
+```
 
 
 
@@ -135,6 +170,21 @@ The Font Size component is a part of the Font Friend Chrome extension, providing
 
 
 </p>
+### font size code
+
+```
+  let [tab] = await chrome.tabs.query({ active: true });
+        chrome.scripting.executeScript({
+            target: { tabId: tab.id },
+            args: [currentSize],
+            func: (currentSize) => {
+                let allElements = document.querySelectorAll("*");
+                allElements.forEach(function (element) {
+                    element.style.fontSize = currentSize;
+                });
+            },
+        });
+```
 
 ## Usage
 
