@@ -7,6 +7,10 @@
 
 A open source customisable font formatter chrome extension tool which is mainly built for making user's readability experience better.
 
+
+https://github.com/RaunakScarlet/Font-Friend/assets/86217548/f3668877-2b1f-4594-ab0c-19d770ad20b7
+
+
 <p align="center">
   <img width="496" alt="Screenshot 2023-11-30 at 2 58 23 PM" src="https://github.com/RaunakScarlet/Font-Friend/assets/86217548/b92a0028-dacd-49c7-9818-838aec6a8900">
 </p>
